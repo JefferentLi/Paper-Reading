@@ -1,4 +1,4 @@
-![[../paper/AI safety/2025-A Comprehensive Survey of Large Model Safety.pdf]]
+![](../paper/AI%20safety/2025-A%20Comprehensive%20Survey%20of%20Large%20Model%20Safety.pdf)
 
 # 名词介绍
 
@@ -55,7 +55,8 @@
 
 ## per-trained Vision Transformers (ViTs)
 
-将每个图片看作一个“句子”，图片切块后的每个小方块看作“单词”，从而生成向量，引入到Transformer中。总结：**将图像当作“单词序列”来处理的强大视觉基础模型，尤其在经过大规模数据预训练后，能深刻理解图像的全局信息。**
+将每个图片看作一个“句子”，图片切块后的每个小方块看作“单词”，从而生成向量，引入到Transformer中。  
+总结：**将图像当作“单词序列”来处理的强大视觉基础模型，尤其在经过大规模数据预训练后，能深刻理解图像的全局信息。**
 
 1. **Adversarial Attacks**
 	1. **white-box attacks**

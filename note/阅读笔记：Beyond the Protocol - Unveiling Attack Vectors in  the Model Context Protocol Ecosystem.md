@@ -1,4 +1,4 @@
-![[../paper/AI safety/2025-Unveiling Attack Vectors in the Model Context Protocol Ecosystem.pdf]]
+![](../paper/AI%20safety/2025-Unveiling%20Attack%20Vectors%20in%20the%20Model%20Context%20Protocol%20Ecosystem.pdf)
 # Abstract
 
 模型上下文协议（Model Context Protocol, MCP）：让大模型和外界工具进行交互的通信框架，为各种外部工具、API和服务接入大模型提供了一个统一、规范的接口。
@@ -36,7 +36,7 @@ MCP聚合平台：用户从MCP聚合平台获取MCP服务。
 
 ## MCP交互工作流
 
-![[attachments/Pasted image 20250714202820.png]]
+![](attachments/Pasted%20image%2020250714202820.png)
 
 1. **初始配置**：MCP客户端根据本地配置从包仓库获取所需的软件包，并启动相应的服务进程。
 2. **功能注册**：MCP服务器通过标准化的描述信息注册自身功能，公开可用的工具、资源、提示词等信息。
@@ -63,25 +63,25 @@ MCP聚合平台：用户从MCP聚合平台获取MCP服务。
 ### Tool Poisoning Attack
 
 攻击者创建一个看起来正常、功能完整的工具，但这个工具会故意向AI提供虚假的、被篡改的或有害的信息，利用AI对工具的信任，最终欺骗或操纵用户。
-![[attachments/Pasted image 20250715112156.png]]
-这种攻击主要影响路径②和④，在路径⑥中成功实施，攻击源为 MCP 服务器本身。
 
+这种攻击主要影响路径②和④，在路径⑥中成功实施，攻击源为 MCP 服务器本身。
+![](attachments/Pasted%20image%2020250715112156.png)
 ### Puppet Attack
 
 恶意工具在返回正常结果的同时，偷偷地在数据中夹带一个“隐藏的指令”（恶意Prompt），这个指令会劫持AI，像幕后黑手一样操纵AI去执行另一个恶意任务，而整个过程用户完全不知情。
-![[attachments/Pasted image 20250715152921.png]]
+![](attachments/Pasted%20image%2020250715152921.png)
 这种攻击主要影响路径②、④和⑤，在路径⑥中成功实施，攻击源为 MCP 服务器本身。
 
 ### Rug Pull Attack
 
 恶意服务器最初提供合法、无害的服务，以通过安全审计并获得用户信任。随后，在某个时间点，它会改变其行为（例如，通过更新依赖项或API响应）来发起恶意攻击 。
-![[attachments/Pasted image 20250715154619.png]]
+![](attachments/Pasted%20image%2020250715154619.png)
 该攻击主要影响路径①、②和④，在路径⑥中成功实施，攻击源为 MCP 服务器和包仓库。
 
 ### Malicious External Resources
 
 工具本身是无害的，但它所依赖和引用的外部信息源（如网站、数据库、代码库）被攻击者篡改了。于是，这个无辜的工具在不知情的情况下，从被污染的源头获取了有害内容，并将其带回给AI和用户。
-![[attachments/Pasted image 20250715160026.png]]
+![](attachments/Pasted%20image%2020250715160026.png)
 该攻击在路径⑦中成功实施，攻击源为第三方资源。
 
 # Experiment
